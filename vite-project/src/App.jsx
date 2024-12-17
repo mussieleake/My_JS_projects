@@ -7,10 +7,13 @@ function App() {
 
   const storageKeyName = "myotherkey";
 
-  const retrieveCountValue = () => Number(localStorage.getItem(storageKeyName) || 0)
+  const retrieveCountValue = () => {
+    const storedValue = localStorage.getItem(storageKeyName);
+    return storedValue ? Number(storedValue) : 0;
+  };
   
   const [count, setCount] = useState(retrieveCountValue());
-  const addNumber = (count) => setCount(Number(count) + 1);
+  const addNumber = () => setCount((prevCount) => prevCount + 1);
 
   useEffect(() => {
     localStorage.setItem(storageKeyName, String(count));
