@@ -1,7 +1,9 @@
 import { useDebugValue, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import styled from "styled-components"
 import './App.css'
+import { MainApp } from './styled'
 
 function App() {
 
@@ -20,14 +22,12 @@ function App() {
   }, [count]);
 
   return (
-    <div className='App'>
-      Hello World
-
+    <MainApp>
+      Count me
       <button onClick={() => addNumber(count)}>
         count is {count}
       </button>
-    </div>
-   
+    </MainApp>
   )
 }
 
