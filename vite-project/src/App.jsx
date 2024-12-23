@@ -1,11 +1,13 @@
-import { useDebugValue, useEffect, useState } from 'react'
+import React, { useDebugValue, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import styled from "styled-components"
 import './App.css'
 import { MainApp } from './styled'
+import { Heading, Text, Button } from '@chakra-ui/react'
 
-function App() {
+
+export const App = () => {
 
   const storageKeyName = "myotherkey";
 
@@ -23,10 +25,13 @@ function App() {
 
   return (
     <MainApp>
-      Count me
-      <button onClick={() => addNumber(count)}>
+        <Heading>Vite Webapp</Heading>
+        <Text>This is a vite project aimed to get started with 
+          the components and features of vite and yarn.</Text>
+        <Text>Count me</Text>
+      <Button colorScheme="teal" variant="solid" onClick={() => addNumber(count)}>
         count is {count}
-      </button>
+      </Button>
     </MainApp>
   )
 }
